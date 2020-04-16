@@ -9,8 +9,13 @@
         
         private $energy;
         private $energyLevel;
+        /**
+         * @var bool
+         */
+        private $hasParkBrake = TRUE;
 
-        public function __construct(string $color, int $nbSeats, string $energy){
+        public function __construct(string $color, int $nbSeats, string $energy)
+        {
             parent::__construct($color, $nbSeats);
             $this->energy = $energy;
         }
@@ -38,10 +43,35 @@
             $this->energyLevel = $energyLevel;
         }
 
-        public function start() {
-            $this->energyLevel = 100;
-            return "Start !";
+        public function start()
+        {
+            try {
+                if ($this->hasParkBrake) {
+                    throw new Exception("Le frein à main est actif");
+                }
+            } catch (Exception $e) {
+                echo $e;
+            }finally {
+            return "Ma voiture roule comme un donut";
+            //$this->energyLevel = 100;
+            //return "Start !";
+            }
         }
 
+        /**
+         * @return bool
+         */
+        public function getHasParkBrake()
+        {
+            return $this->hasParkBrake;
+        }
 
-}
+        /**
+         * @param bool $hasParkBrake
+         */
+        public function setHasParkBrake($hasParkBrake)
+        {
+            $this->hasParkBrake = $hasParkBrake;
+        }
+
+    }

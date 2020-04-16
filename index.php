@@ -38,20 +38,24 @@
     echo"<br>";*/
 
     $car1 = new Car("black", 5, "diesel");
-    /*var_dump($car1);
-    echo $car1->getColor();
+    var_dump($car1);
+    //echo $car1->getColor();
 
-    $car2 = new Car("blue", 4, "gas");
+    //$car2 = new Car("blue", 4, "gas");
     //var_dump($car2);
 
     echo"<br>";
+    //$car1->setHasParkBrake(false);
     echo $car1->start();
-    echo"<br>";
-    echo $car1->forward();
-    echo"<br>";
-    echo $car1->brake();*/
+    var_dump($car1);
 
-    $motorWay1 = new MotorWay();
+    echo"<br>";
+
+    //echo $car1->forward();
+    //echo"<br>";
+    //echo $car1->brake();
+
+    /*$motorWay1 = new MotorWay();
     //$motorWay1->setCurrentVehicles("car");
     //var_dump($motorWay1);
     $motorWay1->addVehicle($car1);
@@ -70,6 +74,6 @@
     $residentialWay1->addVehicle($car1);
     $residentialWay1->addVehicle($truck1);
     $residentialWay1->addVehicle($bike1);
-    var_dump($residentialWay1);
+    var_dump($residentialWay1);*/
 
 

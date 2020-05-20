@@ -1,7 +1,7 @@
 <?php
     require_once 'Vehicle.php';
 
-    class Truck extends Vehicle {
+    class Truck extends Vehicle implements LightableInterface {
         const ALLOWED_ENERGIES = [
             'fuel',
             'electric'
@@ -15,6 +15,16 @@
             parent::__construct($color, $nbSeats);
             $this->energy = $energy;
             $this->storage = $storage;
+        }
+
+        public function switchOn()
+        {
+            return true;
+        }
+
+        public function switchOff()
+        {
+            return false;
         }
 
         public function getEnergy(): string 
